@@ -379,6 +379,12 @@ h4 {
   margin-bottom: 2px;
 }
 
+@media(max-width: 780px){
+  form{
+    margin-top: 10em;
+  }
+}
+
 @media (max-width: 490px) {
   input {
     width: 300px;
