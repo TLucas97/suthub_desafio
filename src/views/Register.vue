@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div id="home">
-      <form @submit="registerData">
+
+      <form @submit="registerData" id="form">
       <h4>{{msg}}</h4>
         <div id="form">
           <label>Data de nascimento:</label> <br>
@@ -82,10 +82,19 @@
             v-model="race"
           />
           <br />
-          <label>Renda mensal:</label> <br>
-          <money v-model="income" v-bind="money" min="1000"></money>
+          <label>Renda mensal:</label> <!-- Nesta sessão tentei utilizar o v-money inicialmente
+          porém tive alguns problemas na hora de validar esta parte do formulário -->
+          <div class="input-icon">
+            <input
+              type="number"
+              min="1000"
+              step="any"
+              v-model="income"
+              placeholder="00,00"
+            />
+            <i>R$</i>
+          </div>
           <br />
-
           <input
             v-model="cep"
             @keyup="getCEP"
@@ -113,16 +122,15 @@
           <input type="submit" value="Enviar" id="submit" />
         </div>
       </form>
-    </div>
+
   </main>
 </template>
 
 <script>
- import {Money} from 'v-money'
+
 
 export default {
   name: "Register",
-  components: {Money},
   data() {
     return {
       outro: false,
@@ -148,14 +156,7 @@ export default {
       showDog: false,
 
       msg: "",
-
-        money: {
-          decimal: ',',
-          thousands: '.',
-          prefix: 'R$ ',
-          precision: 2,
-          masked: false
-        }
+      warning: "",
     };
   },
   methods: {
@@ -246,11 +247,17 @@ export default {
       this.showDog = false;
       this.showCat = true;
     },
+
+    lessThan(){
+      if(this.income < 1000){
+        this.warning = "Valor maior ou igual a 1.000"
+      }
+    }
   },
 
   mounted() {
     this.getAnimalsData();
-  },
+  }
 };
 </script>
 
@@ -264,15 +271,10 @@ main {
 
 form {
   margin: 0 auto;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 117, 110, 1) 0%,
-    rgba(0, 122, 116, 1) 35%,
-    rgba(0, 73, 68, 1) 100%
-  );
+  background:#fff;
   padding: 30px;
-  border: none;
-  margin-top: 3em;
+  border: 2px solid #007a74;
+  margin-top: 11em;
 }
 
 input {
@@ -280,6 +282,7 @@ input {
   padding: 10px 5px;
   width: 400px;
   border: none;
+  border: 2px solid #007a74;
 }
 
 input::placeholder {
@@ -300,7 +303,7 @@ input[type="date"] {
 }
 
 label {
-  color: white;
+  color: rgba(0, 0, 0, 0.753);
   font-weight: bold;
   font-size: 17px;
 }
@@ -360,6 +363,7 @@ select {
   display: block;
   transform: translate(0, -50%);
   top: 49%;
+  padding-left: 5px;
   pointer-events: none;
   width: 25px;
   text-align: center;
@@ -375,7 +379,8 @@ select {
 
 h4 {
   text-align: center;
-  color: white;
+  font-size: 2rem;
+  color: #00756e;
   font-weight: bold;
   margin-bottom: 2px;
 }

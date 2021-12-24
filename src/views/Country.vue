@@ -178,35 +178,11 @@ img{
     transform: scale(1);
   }
 }
-
-@media (max-width: 560px){
-  button{
-    font-size: 1.5em;
-    width: 300px;
-  }
-}
     
 @media (max-width: 500px){
   #sub-master{
-    width: 450px;
-    height: 300px;
+    width: 600px;
+    height: 500px;
   }
-}
-
-@media (max-width: 455px){
-    #sub-master{
-    width: 350px;
-    height: 300px;
-  }
-}
-@media (max-width: 355px){
-    #sub-master{
-    width: 250px;
-    height: 350px;
-  }
-
-    button{
-      margin-top: 1em;
-    }
 }
 </style>
