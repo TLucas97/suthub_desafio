@@ -8,7 +8,7 @@
 
 • Filtra as buscas em uma aba de pesquisa
 
-• Filtra as buscas pela língua falava em cada país
+• Filtra as buscas pela língua falada em cada país
 
 • Traz dados sobre o Brasil
 
