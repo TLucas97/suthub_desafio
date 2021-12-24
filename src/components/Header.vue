@@ -123,7 +123,7 @@ li {
 
   #nav {
     flex-direction: row;
-    margin-bottom: 6.5em;
+    margin-bottom: 9em;
   }
 
   img {
