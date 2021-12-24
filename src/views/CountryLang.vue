@@ -103,17 +103,21 @@ li{
 
 #master{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #sub-master{
-    background: linear-gradient(90deg, rgba(0,117,110,1) 0%, rgba(0,122,116,1) 35%, rgba(0,73,68,1) 100%);
+    background: #fff;
+    border: 1px solid #007a74;
     border-radius: 15px;
-    width: 1000px;
-    height: 270px;
+    width: 500px;
+    height: 300px;
     margin-bottom: 5em;
+    transition: .2s;
+    margin: 10px 10px;
 }
 
 p{
@@ -121,19 +125,27 @@ p{
     font-size: 25px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.685);
+    color: rgba(0, 0, 0, 0.685);
+}
+
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 span{
-    color: white;
+    color: #007a74;
 }
 
 a{
-    color: rgb(194, 192, 192);
+    color: rgb(58, 56, 56);
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 
 a:hover{
-    color:black;
+    color:#007a74;
 }
 
 #loading{
