@@ -4,6 +4,7 @@
       <form @submit="registerData">
       <h4>{{msg}}</h4>
         <div id="form">
+          <label>Data de nascimento:</label> <br>
           <input
             type="date"
             max="2003-12-31"
