@@ -15,8 +15,8 @@
       </ul>
     </div>
 
-    <transition name="router-anim">
-      <router-view/>
+    <transition name="fade" mode="out-in">
+        <router-view />
     </transition>
   </div>
 </template>
@@ -56,15 +56,15 @@ li {
   color: #007a74;
 }
 
-.router-anim-enter-active{
-  animation: coming 1s;
-  animation-delay: .5s;
-  opacity: 0;
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: translateX(3em)
 }
 
-.router-anim-leave-active{
-  animation: going 1s;
+.fade-enter-active, .fade-leave-active {
+    transition: all .5s ease-out;
 }
+
 
 @keyframes going {
   from {

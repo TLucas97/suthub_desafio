@@ -1,8 +1,8 @@
 <template>
 <main>
   <section>
-<transition name="bounce">
     <div id="master">
+        <h1>Brasil: Dados completos</h1>
         <div id="sub-master" v-for="(country, key) in countriesData" :key="key">
          <div id="title">
             <p>{{ country.name.common }}</p>
@@ -10,6 +10,80 @@
             <p>Bandeira: <span>{{ country.flag }}</span></p>
             <p>Região: <span>{{ country.region }}</span></p>
             <p>Sub-região: <span>{{ country.subregion }}</span></p>
+            <p>Capital: <span> {{ country.capital[0] }}</span></p>
+            <p>TLD: <span> {{ country.tld[0] }}</span></p>
+            <p>Moeda:
+              <ul v-for="currency in country.currencies" :key="currency">
+                <li>
+                  {{currency.name}}
+                </li>
+                <li>
+                  {{ currency.symbol }}
+                </li>
+              </ul>
+            </p>
+            <p>CCA2: {{ country.cca2 }}</p>
+            <p>CCN3: {{ country.ccn3 }}</p>
+            <p>CIOC: {{ country.cioc }}</p>
+            <p>CCA3: {{ country.cca3 }}</p>
+            <p>Independente: {{ country.independent }}</p>
+            <p>Status: {{ country.status }}</p>
+            <p>unMember: {{ country.unMember }}</p>
+            <p>IDD: {{ country.idd.root }}</p>
+            <p>Suffixes: {{ country.idd.suffixes[0] }}</p>
+            <ul v-for="spellings in country.altSpellings" :key="spellings[0]">
+              <li>
+               <p> Alternative Spellings: {{ spellings }} </p>
+              </li>
+            </ul>
+            <p>latlng: {{ country.latlng[0] }}</p>
+            <p>latlng: {{ country.latlng[1] }}</p>
+            <p>Landlocked: {{ country.landlocked }}</p>
+            <p>Area: {{ country.area }}</p>
+            <p>Denomyns[1]: {{ country.demonyms.eng.f }}</p>
+            <p>Denomyns[2]: {{ country.demonyms.eng.m }}</p>
+            <p>Denomyns[3]: {{ country.demonyms.fra.f }}</p>
+            <p>Denomyns[4]: {{ country.demonyms.fra.m }}</p>
+            <p>Traduções: {{ country.translations.ces.official }}</p>
+            <p>Traduções: {{ country.translations.ces.common }}</p>
+            <p>Traduções: {{ country.translations.deu.official }}</p>
+            <p>Traduções: {{ country.translations.deu.common }}</p>
+            <p>Traduções: {{ country.translations.est.official }}</p>
+            <p>Traduções: {{ country.translations.est.common }}</p>
+            <p>Traduções: {{ country.translations.fin.official }}</p>
+            <p>Traduções: {{ country.translations.fin.common }}</p>
+            <p>Traduções: {{ country.translations.fra.official }}</p>
+            <p>Traduções: {{ country.translations.fra.common }}</p>
+            <p>Traduções: {{ country.translations.hrv.official }}</p>
+            <p>Traduções: {{ country.translations.hrv.common }}</p>
+            <p>Traduções: {{ country.translations.hun.official }}</p>
+            <p>Traduções: {{ country.translations.hun.common }}</p>
+            <p>Traduções: {{ country.translations.ita.official }}</p>
+            <p>Traduções: {{ country.translations.ita.common }}</p>
+            <p>Traduções: {{ country.translations.jpn.official }}</p>
+            <p>Traduções: {{ country.translations.jpn.common }}</p>
+            <p>Traduções: {{ country.translations.kor.official }}</p>
+            <p>Traduções: {{ country.translations.kor.common }}</p>
+            <p>Traduções: {{ country.translations.nld.official }}</p>
+            <p>Traduções: {{ country.translations.nld.common }}</p>
+            <p>Traduções: {{ country.translations.per.official }}</p>
+            <p>Traduções: {{ country.translations.per.common }}</p>
+            <p>Traduções: {{ country.translations.pol.official }}</p>
+            <p>Traduções: {{ country.translations.pol.common }}</p>
+            <p>Traduções: {{ country.translations.por.official }}</p>
+            <p>Traduções: {{ country.translations.por.common }}</p>
+            <p>Traduções: {{ country.translations.rus.official }}</p>
+            <p>Traduções: {{ country.translations.rus.common }}</p>
+            <p>Traduções: {{ country.translations.slk.official }}</p>
+            <p>Traduções: {{ country.translations.slk.common }}</p>
+            <p>Traduções: {{ country.translations.spa.official }}</p>
+            <p>Traduções: {{ country.translations.spa.common }}</p>
+            <p>Traduções: {{ country.translations.swe.official }}</p>
+            <p>Traduções: {{ country.translations.swe.common }}</p>
+            <p>Traduções: {{ country.translations.urd.official }}</p>
+            <p>Traduções: {{ country.translations.urd.common }}</p>
+            <p>Traduções: {{ country.translations.zho.official }}</p>
+            <p>Traduções: {{ country.translations.zho.common }}</p>
             <p
               >Idiomas:
               <ul>
@@ -28,7 +102,6 @@
           </div>
         </div>
       </div>
-</transition>
   </section>
 </main>
 </template>
@@ -68,58 +141,35 @@ export default{
 <style scoped>
 
 main{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+ul{
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-ul{
-    margin-bottom: 4em;
-    display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin-left: 10px;
-}
-
-li{
-  margin-right: 15px;
-}
-
-section{
-  margin-top: 3em;
 }
 
 #master{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#sub-master{
-    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://www.significados.com.br/foto/bandeira-do-brasil.png");
-    background-size: cover;
-    background-position: center;
-    border: 1px solid #007a74;
-    border-radius: 15px;
-    width: 1000px;
-    height: 500px;
-    margin-bottom: 5em;
-    transition: .2s;
-    margin: 10px 10px;
+    flex-direction: column;
+    margin-top: 2em;
 }
 
 p{
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 25px;
+    font-size: 20px;
+    margin-bottom: 15px;
     font-weight: bold;
     color: black;
-}
-
-ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 span{
@@ -133,7 +183,7 @@ a{
 }
 
 a:hover{
-    color:white;
+    color:rgb(0, 0, 0);
 }
 
 #loading{
@@ -145,44 +195,15 @@ h1{
     font-size: 2.5rem;
     margin-bottom: 1em;
 }
-
-#title{
-  margin-top: 10px;
-}
-
-#master{
-  margin-top: 1em;
-}
-
-
-.bounce-enter-active{
-  animation: bounce-in .5s;
-}
-
-.bounce-leave-active{
-  animation: bouce-in reverse .5s;
-}
-
-img{
-    cursor: pointer;
-}
-
-@keyframes bounce-in {
-  0%{
-    transform: scale(0);
-  }
-  50%{
-    transform: scale(1.2);
-  }
-  100%{
-    transform: scale(1);
-  }
-}
     
 @media (max-width: 500px){
-  #sub-master{
-    width: 600px;
-    height: 500px;
+  h1{
+    text-align: center;
+    font-size: 25px;
+  }
+
+  p{
+    font-size: 15px;
   }
 }
 </style>

@@ -247,12 +247,6 @@ export default {
       this.showDog = false;
       this.showCat = true;
     },
-
-    lessThan(){
-      if(this.income < 1000){
-        this.warning = "Valor maior ou igual a 1.000"
-      }
-    }
   },
 
   mounted() {
