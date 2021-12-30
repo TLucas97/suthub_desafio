@@ -12,7 +12,7 @@
 
 • Traz dados sobre o Brasil
 
-• Contém uma sessão de cadastro que insere as informações em um servidor e renderiza as mesmas na sessão "Info"
+• Contém uma sessão de cadastro que insere as informações em um Json-server e renderiza as mesmas na sessão "Info"
 
 • Na sessão info são renderizadas as informações juntamente com uma função para deletar essas informações do servidor.
 
@@ -22,9 +22,9 @@
 
 • V-mask
 
-• V-money
-
 • Font-awesome
+
+• Json-server
 
 ## - Demonstração do projeto:
 
