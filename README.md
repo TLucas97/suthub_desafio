@@ -33,8 +33,13 @@
 https://www.youtube.com/watch?v=gKoRGMxmO6I
 
 • Link para utilização da aplicação e testes:
+!! UPDATE 05/01 !! -- O site que disponibiliza a API está sendo recusado pelo Chrome (aquela mensagem de segurança que informa se o usuário ainda quer continuar navegando no site) devido a esse problema, as informações que antes renderizavam normalmente não estão renderizando.
 
-https://suthub-challenge.netlify.app/
+!! SOLUÇÃO !! -- Entrar no site que disponibiliza a API e marcar a opção de navegar independente da mensagem padrão de segurança do Chrome. Logo em seguida as informações irão renderizar normalmente em tela no site da aplicação.
+
+Site da api --> https://restcountries.com/
+
+Aplicação --> https://suthub-challenge.netlify.app/
 
 ## Project setup
 ```
